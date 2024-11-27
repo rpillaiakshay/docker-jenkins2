@@ -1,7 +1,7 @@
 version: '3'
 services:
   service1:
-    image: nginxnew
+    image: newimage
     container_name: nginxcont
     ports:
       - "88:80"     # Mapping port 88 on the host to port 80 in the container
