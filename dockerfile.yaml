@@ -1,0 +1,19 @@
+version: '3'
+services:
+  service1:
+    image: nginxnew
+    container_name: nginxcont
+    ports:
+      - "88:80"     # Mapping port 88 on the host to port 80 in the container
+      - "450:443"   # Mapping port 450 on the host to port 443 in the container
+    networks:
+      - net23       # Connecting to the custom network
+    volumes:
+      - html:/usr/share/nginx/html   # Using amed volume 'html'
+      
+networks:
+  net23:
+    driver: bridge  # Using default bridge network driver
+
+volumes:
+  html:            # Defining the volume
